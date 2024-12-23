@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malcom Lismore's Photography Studio - Our Gallery</title>
+    <link rel="stylesheet" href="Assets/earthsavior.css">
+    <script src="https://kit.fontawesome.com/bae5ccfdda.js" crossorigin="anonymous"></script>
+    <script src="Assets/GalScript.js" defer></script>
+</head>
+
+<body>
+    <section id="header" class="fixed-header">
+        <a href="#"><img src="Img/logo.png" class="logo" alt="Logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+                <li><a href="Our Products.html">Our Products</a></li>
+                <li><a class="active" href="Our Gallery.html">Our Gallery</a></li>
+                <li><a href="Donate.html">Donate</a></li>
+                <li><a href="Others.html">Others</a></li>
+                <li><a href="Cart.html"><i class="fa-solid fa-bag-shopping" style="font-size: 24px; margin-left: 35px;"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-user" style="font-size: 24px;" id="profileIcon"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+                    <h3 id="userFullName">User Name</h3>
+                </div>
+                <hr>
+
+                <a href="#" class="sub-menu-link">
+                    <i class="fa-solid fa-user" style="font-size: 24px;"></i>
+                    <p>Edit Profile</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link" id="logoutLink">
+                    <i class="fa-solid fa-user" style="font-size: 24px;"></i>
+                    <p>Logout</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="img_container">
+        <div class="panel active" style="background-image: url(Img/we3.jpg);">
+            <h1>expanding cards</h1>
+        </div>
+        <div class="panel" style="background-image: url(Img/we2.jpg);">
+            <h1>expanding cards</h1>
+        </div>
+        <div class="panel" style="background-image: url(Img/we1.jpg);">
+            <h1>expanding cards</h1>
+        </div>
+        <div class="panel" style="background-image: url(Img/we4.jpg);">
+            <h1>expanding cards</h1>
+        </div>
+        <div class="panel" style="background-image: url(Img/we5.jpg);">
+            <h1>expanding cards</h1>
+        </div>
+        <div class="panel" style="background-image: url(Img/we3.jpg);">
+            <h1>expanding cards</h1>
+        </div>
+        <!-- <div class="panel" style="background-image: url(Img/3.jpg);">
+            <h1>expanding cards</h1>
+        </div> -->
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let subMenu = document.getElementById("subMenu");
+            let profileIcon = document.getElementById("profileIcon");
+            let logoutLink = document.getElementById("logoutLink");
+
+            // Fetch the full name from the session (you need a PHP endpoint to fetch session data)
+            fetch('Includes/getUserFullName.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.full_name) {
+                        document.getElementById('userFullName').textContent = data.full_name;
+                    }
+                })
+                .catch(error => console.error('Error fetching user full name:', error));
+
+            profileIcon.addEventListener("click", () => {
+                subMenu.classList.toggle("open-menu");
+            });
+
+            logoutLink.addEventListener("click", (event) => {
+                event.preventDefault(); // Prevent default link behavior
+                // Perform logout operation (e.g., clearing session data)
+                // Redirect to the Login page
+                window.location.href = "Login.html";
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background: linear-gradient(90deg,#7d9b76, #35384b); */
+    /* background: linear-gradient(to right, #ece9e6, #ffffff); */
+    background: linear-gradient(90deg,#7d9b76, #f6f6e9);
+}
+
+.LOGO 
+{
+    width: auto;  /* Adjust the width as needed */
+    height: auto;  /* Maintain the aspect ratio */
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.left, .right {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    /* background: #000; */
+}
+
+.left {
+    border-right: 1px solid #ccc;
+    text-align: center;
+}
+
+.image-placeholder {
+    width: 300px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #888;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    text-align: center;}
+
+.login-box h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-box input[type="email"], .login-box input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-box button {
+    padding: 10px;
+    border: none;
+    background-color: #35384b;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.login-box a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.login-box a:hover {
+    text-decoration: underline;
+}
+
+.login-box p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+.OName
+{
+    align-items: center;
+    text-align: center;
+    color: #138D75;
+    font-family: "Merriweather", serif;
+    font-weight: 200;
+    font-size: 25;
+    font-style: bold;
+}
+
+/* ---------------------SignUP_Page-------------------------------- */
+.signup-container {
+    display: flex;
+    width: 80%;
+    max-width: 1200px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.signup-left, .signup-right {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.signup-left {
+    border-right: 1px solid #ccc;
+    text-align: justify;
+}
+
+.signup-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-box {
+    width: 400px;
+    height: auto;
+    border: 2px dashed #ccc;
+    margin: 20px auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    color: #000000;
+}
+
+.info-box p {
+    text-align: justify;
+    margin: 5px 0;
+}
+
+.registration-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.registration-box h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.registration-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-box input[type="text"], .registration-box input[type="email"], .registration-box input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.password-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.password-container input {
+    width: 48%;
+}
+
+.registration-box button {
+    padding: 10px;
+    border: none;
+    background-color: #35384b;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.registration-box a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.registration-box a:hover {
+    text-decoration: underline;
+}
+
+.registration-box p {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.Signup_button {
+    padding: 10px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.have_accButton
+{
+    padding: 10px;
+    border: none;
+    background-color: #138D75;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.Information
+{
+    align-items: center;
+    text-align: justify;
+}

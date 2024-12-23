@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Your Used Cooking Oil</title>
+    <link rel="stylesheet" href="Assets/earthsavior.css">
+    <script src="https://kit.fontawesome.com/bae5ccfdda.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        #header {
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 80px;
+            background: #F6F6D2;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+        }
+
+        #navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            height: 90px;
+        }
+
+        #navbar li {
+            list-style: none;
+            padding: 0 20px;
+            position: relative;
+        }
+
+        #navbar li a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            color: #35384B;
+            transition: 0.3s ease;
+        }
+
+        #navbar li a:hover,
+        #navbar li a.active {
+            color: #7D9B76;
+        }
+
+        .sub-menu-wrap {
+            position: absolute;
+            top: 80px;
+            right: 50px;
+            width: 250px;
+            height: 150px;
+            background: white;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            z-index: 1;
+            display: none;
+        }
+
+        .sub-menu {
+            padding: 20px;
+        }
+
+        .sub-menu .user-info h3 {
+            margin: 0;
+            padding-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .sub-menu hr {
+            border: none;
+            height: 1px;
+            background: #ddd;
+            margin: 10px 0;
+        }
+
+        .sub-menu-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            padding: 10px 0;
+        }
+
+        .sub-menu-link i {
+            margin-right: 10px;
+        }
+
+        .sub-menu-link span {
+            margin-left: auto;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .product-card {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 30%;
+            margin-bottom: 20px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .product-card h3 {
+            font-size: 1.5em;
+            color: #333;
+        }
+
+        .product-card p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .product-card .price {
+            font-size: 1.4em;
+            color: #27ae60;
+            margin: 10px 0;
+        }
+
+        .product-card .rating {
+            color: #f1c40f;
+            font-size: 1.2em;
+        }
+
+        .add-to-cart {
+            display: inline-block;
+            background-color: #27ae60;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #1e8449;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="header">
+        <a href="#"><img src="Img/logo.png" class="logo" alt="Logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+                <li><a class="active" href="Our Products.html">Our Products</a></li>
+                <li><a href="Our Gallery.html">Our Gallery</a></li>
+                <li><a href="Donate.html">Donate</a></li>
+                <li><a href="Others.html">Others</a></li>
+                <li><a href="Cart.html"><i class="fa-solid fa-bag-shopping" style="font-size: 24px; margin-left: 35px;"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-user" style="font-size: 24px;" id="profileIcon"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+                    <h3 id="userFullName">User Name</h3>
+                </div>
+                <hr>
+
+                <a href="#" class="sub-menu-link">
+                    <i class="fa-solid fa-user" style="font-size: 24px;"></i>
+                    <p>Edit Profile</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link" id="logoutLink">
+                    <i class="fa-solid fa-user" style="font-size: 24px;"></i>
+                    <p>Logout</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <h1>Our Products</h1>
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product-card">
+                <img src="Img/p2.png" alt="Product 1">
+                <h3>Flower Soap with Peach Fragrance</h3>
+                <p class="price">RM 2</p>
+                <p class="rating">★★★★☆</p>
+                <a href="Cart.html?product=Flower%20Soap%20with%20Peach%20Fragrance&price=2" class="add-to-cart">Add to Cart</a>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card">
+                <img src="Img/p1.png" alt="Product 2">
+                <h3>Square Soap with Pine Fragrance</h3>
+                <p class="price">RM 2</p>
+                <p class="rating">★★★★★</p>
+                <a href="Cart.html?product=Square%20Soap%20with%20Pine%20Fragrance&price=2" class="add-to-cart">Add to Cart</a>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card">
+                <img src="Img/p3.jpg" alt="Product 3">
+                <h3>Rose Soap with Peach Fragrance</h3>
+                <p class="price">RM 2</p>
+                <p class="rating">★★★☆☆</p>
+                <a href="Cart.html?product=Rose%20Soap%20with%20Peach%20Fragrance&price=2" class="add-to-cart">Add to Cart</a>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-card">
+                <img src="Img/p4.jpg" alt="Product 4">
+                <h3>Bell Soap with Pine Fragrance</h3>
+                <p class="price">RM 2</p>
+                <p class="rating">★★★★☆</p>
+                <a href="Cart.html?product=Bell%20Soap%20with%20Pine%20Fragrance&price=2" class="add-to-cart">Add to Cart</a>
+            </div>
+            <!-- Product 5 -->
+            <div class="product-card">
+                <img src="Img/p5.jpg" alt="Product 5">
+                <h3>Key Tag Soap with Peach Fragrance</h3>
+                <p class="price">RM 2</p>
+                <p class="rating">★★★★☆</p>
+                <a href="Cart.html?product=Key%20Tag%20Soap%20with%20Peach%20Fragrance&price=2" class="add-to-cart">Add to Cart</a>
+            </div>
+            <!-- Product 6 -->
+            <div class="product-card">
+                <img src="Img/p6.jpg" alt="Product 6">
+                <h3>Star Shape Soap with Peach Fragrance</h3>
+                <p class="price">RM 2</p>
+                <p class="rating">★★★★☆</p>
+                <a href="Cart.html?product=Star%20Shape%20Soap%20with%20Peach%20Fragrance&price=2" class="add-to-cart">Add to Cart</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var profileIcon = document.getElementById("profileIcon");
+        var subMenu = document.getElementById("subMenu");
+
+        profileIcon.addEventListener("click", function() {
+            subMenu.classList.toggle("open-menu");
+        });
+    </script>
+</body>
+
+</html>

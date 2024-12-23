@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Your Used Cooking Oil</title>
+    <link rel="stylesheet" href="Assets/earthsavior.css">
+    <script src="https://kit.fontawesome.com/bae5ccfdda.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section id="header">
+        <a href="#"><img src="Img/logo.png" class="logo" alt="Logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+                <li><a href="Our Products.html">Our Products</a></li>
+                <li><a href="Our Gallery.html">Our Gallery</a></li>
+                <li><a href="Donate.html">Donate</a></li>
+                <li><a class="active" href="Others.html">Others</a></li>
+                <li><a href="Cart.html"><i class="fa-solid fa-bag-shopping" style="font-size: 24px; margin-left: 35px;"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-user" style="font-size: 24px;" id="profileIcon"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+                    <h3 id="userFullName">User Name</a></h3>
+                </div>
+                <hr>
+
+                <a href="#" class="sub-menu-link">
+                    <i class="fa-solid fa-user" style="font-size: 24px;"></i>
+                    <p>Edit Profile</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link" id="logoutLink">
+                    <i class="fa-solid fa-user" style="font-size: 24px;"></i>
+                    <p>Logout</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let subMenu = document.getElementById("subMenu");
+            let profileIcon = document.getElementById("profileIcon");
+            let logoutLink = document.getElementById("logoutLink");
+
+            // Fetch the full name from the session (you need a PHP endpoint to fetch session data)
+            fetch('Includes/getUserFullName.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.full_name) {
+                        document.getElementById('userFullName').textContent = data.full_name;
+                    }
+                })
+                .catch(error => console.error('Error fetching user full name:', error));
+
+            profileIcon.addEventListener("click", () => {
+                subMenu.classList.toggle("open-menu");
+            });
+
+            logoutLink.addEventListener("click", (event) => {
+                event.preventDefault(); // Prevent default link behavior
+                // Perform logout operation (e.g., clearing session data)
+                // Redirect to the Login page
+                window.location.href = "Login.html";
+            });
+        });
+    </script>
+
+    <section id="intro">
+        <div class="Donate-text">
+            <h1>"Transform Waste into Wonder: Donate Your Used Cooking Oil Today and Be Part of a Greener Tomorrow!"</h1>
+            <p>Carefully read the below instructions and submit the form if you’re willing to donate your used oil!</p>
+        </div>    
+    </section>
+
+    <section id="content">
+        <div class="instructions">
+            <h2>Instructions for the donator!</h2>
+            <p>Donate your used cooking oil and help us create eco-friendly soap! By contributing, you not only reduce waste but also support sustainable practices. Plus, enjoy exciting incentives as a thank-you for your donation. Join us in making a positive impact today!</p>
+            <h3>Collect Your Used Cooking Oil:</h3>
+            <p style="color: #fff; margin-left: 20px;">After cooking, let the oil cool and pour it into a clean, sealable container.</p>
+            <h3>Register Your Donation:</h3>
+            <p style="color: #fff; margin-left: 20px;">Please fill out the given form with your details.</p>
+            <h3>Drop-Off or Schedule Pick-Up:</h3> 
+            <p style="color: #fff; margin-left: 20px;">Drop off your container at the designated location or schedule a pick-up.</p>
+        </div>
+        <div class="form">
+            <div class="Donators">
+                <h2> Oil Donation Form</h2>
+                <form action="Donate.php" method="POST">
+                    <p>Enter Your Name: </p>
+                    <input type="text" name="DonatorsName" required>
+                    <p>Enter Your Contact Number: </p>
+                    <input type="text" name="ContactNumber" required>
+                    <p>Enter Your Address: </p>
+                    <input type="text" name="Address" required>
+                    <p>Enter the Collection Point Address: </p>
+                    <input type="text" name="CollectionPoint" required>
+                    <p>Enter the Oil Amount (Liters): </p>
+                    <input type="text" name="Amount" required>
+                    <br> <button type="submit" class="Submit_button">submit</button>
+                </form>
+            </div>
+        </div> 
+    </section>
+   
+    
+
+    <script src="Assets/main.js"></script>
+   
+        
+</body>
+</html>

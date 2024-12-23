@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/bae5ccfdda.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Assets/earthsavior.css">
+</head>
+
+<body>
+    <section id="header">
+        <a href="#"><img src="Img/logo.png" class="logo" alt="Logo"></a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+                <li><a href="Our Products.html">Our Products</a></li>
+                <li><a href="Our Gallery.html">Our Gallery</a></li>
+                <li><a href="Donate.html">Donate</a></li>
+                <li><a class="active" href="Others.html">Others</a></li>
+                <li><a href="Cart.html"><i class="fa-solid fa-bag-shopping" style="font-size: 24px; margin-left: 35px;"></i></a></li>
+                <li><a href="#"><i class="fa-solid fa-user" style="font-size: 24px;" id="profileIcon"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="sub-menu-wrap" id="subMenu">
+            <div class="sub-menu">
+                <div class="user-info">
+                    <h3 id="userFullName">User Name</a></h3>
+                </div>
+                <hr>
+
+                <a href="#" class="sub-menu-link">
+                    <i class="fa-solid fa-user" style="font-size: 24px;"></i>
+                    <p>Edit Profile</p>
+                    <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link" id="logoutLink">
+                    <i class="fa-solid fa-user" style="font-size: 24px;"></i>
+                    <p>Logout</p>
+                    <span>></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            let subMenu = document.getElementById("subMenu");
+            let profileIcon = document.getElementById("profileIcon");
+            let logoutLink = document.getElementById("logoutLink");
+
+            // Fetch the full name from the session (you need a PHP endpoint to fetch session data)
+            fetch('Includes/getUserFullName.php')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.full_name) {
+                        document.getElementById('userFullName').textContent = data.full_name;
+                    }
+                })
+                .catch(error => console.error('Error fetching user full name:', error));
+
+            profileIcon.addEventListener("click", () => {
+                subMenu.classList.toggle("open-menu");
+            });
+
+            logoutLink.addEventListener("click", (event) => {
+                event.preventDefault(); // Prevent default link behavior
+                // Perform logout operation (e.g., clearing session data)
+                // Redirect to the Login page
+                window.location.href = "Login.html";
+            });
+        });
+    </script>
+
+    
+    <section id="about_us_content">
+        <div class="about_us_text">
+            <h1>About Us</h1>
+            <p>Welcome to Earth Savior, a social business dedicated to protecting the environment by repurposing used cooking oil 
+                into eco-friendly soaps. Founded in April 2024 by a group of five final-year BBA students from Albukhary International 
+                University. 
+            <p>We aim to reduce oil waste and educate the community about its environmental impact. Our mission and vision center on 
+                mitigating pollution, preventing water and soil contamination, and protecting aquatic ecosystems and wildlife. 
+                By transforming waste oil into useful products, we aim to lessen environmental harm and safeguard water and soil quality.</p>   
+            <p>Our purpose extends beyond repurposing oil. We strive to educate the community on the environmental risks of oil waste, 
+                promoting sustainable practices and greater environmental responsibility.</p>    
+            <P>The impact of our efforts is significant. By preventing used cooking oil from harming water sources and soil, we protect 
+                local ecosystems and wildlife, ensuring a healthier environment for future generations.</P> 
+            <p>Join us in our mission to repurpose waste and protect our planet. Together, we can make a difference, one soap at a time.</p>
+            <li><a href="Donate.html">Would you like to donate your used oil  ▶</li>
+        </div>
+        <div class="about_us_img">
+            <img src="Img/abt_cover.jpg" alt="abt_img">
+        </div>
+    </section>
+    
+        
+    <script src="script.js" async defer></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Earth Savior</title>
+    <link rel="stylesheet" href="Assets/style.css">
+</head>
+<body>
+    <div class="signup-left">
+        <h1 class="OName">Information</h1>
+        <div class="info-box">
+            <p>Welcome to Earth Savior, your partner in sustainable living. Our mission is to transform used cooking oil into eco-friendly soap. Join us in our journey to protect the environment by buying our products, donating used cooking oil, and receiving exciting incentives. Together, we can make a positive impact on our planet.</p>
+            <!-- <button type="button" class="have_accButton" value="Redirect"> Have an Account </button> -->
+            <a href="Login.html" class="have_accButton">Have an Account</a>
+        </div>
+    </div>
+    <div class="signup-right">
+        <div class="registration-box">
+            <h2>User Registration</h2>
+            <form action="signup.php" method="POST" onsubmit="return validateForm()">
+                <input type="text" name="full_name" placeholder="Enter Your Full Name" required>
+                <input type="email" name="email" placeholder="Enter Email" required>
+                <input type="text" name="contact_number" id="contact_number" placeholder="Enter Contact Number" required>
+                <span id="contact_error" class="error-message"></span>
+                <div class="password-container">
+                    <input type="password" name="password" id="password" placeholder="Enter Password" required>
+                    <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" required>
+                </div>
+                <span id="password_error" class="error-message"></span>
+                <br> <button type="submit" class="registration-box button">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const contactNumber = document.getElementById('contact_number');
+            const contactError = document.getElementById('contact_error');
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirm_password');
+            const passwordError = document.getElementById('password_error');
+            const regex = /^[0-9]+$/;
+
+            let valid = true;
+
+            // Validate contact number
+            if (!regex.test(contactNumber.value)) {
+                contactNumber.style.borderColor = 'red';
+                contactError.textContent = 'Please enter a valid contact number';
+                valid = false;
+            } else {
+                contactNumber.style.borderColor = '';
+                contactError.textContent = '';
+            }
+
+            // Validate password and confirm password
+            if (password.value !== confirmPassword.value) {
+                password.style.borderColor = 'red';
+                confirmPassword.style.borderColor = 'red';
+                passwordError.textContent = 'Passwords do not match';
+                valid = false;
+            } else {
+                password.style.borderColor = '';
+                confirmPassword.style.borderColor = '';
+                passwordError.textContent = '';
+            }
+
+            return valid;
+        }
+
+        document.getElementById('contact_number').addEventListener('input', function() {
+            const contactNumber = document.getElementById('contact_number');
+            const contactError = document.getElementById('contact_error');
+            const regex = /^[0-9]+$/;
+
+            if (!regex.test(contactNumber.value)) {
+                contactNumber.style.borderColor = 'red';
+                contactError.textContent = 'Please enter a valid contact number';
+            } else {
+                contactNumber.style.borderColor = '';
+                contactError.textContent = '';
+            }
+        });
+
+        document.getElementById('confirm_password').addEventListener('input', function() {
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirm_password');
+            const passwordError = document.getElementById('password_error');
+
+            if (password.value !== confirmPassword.value) {
+                confirmPassword.style.borderColor = 'red';
+                passwordError.textContent = 'Passwords do not match';
+            } else {
+                confirmPassword.style.borderColor = '';
+                passwordError.textContent = '';
+            }
+        });
+    </script>
+</body>
+</html>
